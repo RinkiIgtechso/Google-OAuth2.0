@@ -34,7 +34,8 @@ app.get( '/auth/google/callback',
     passport.authenticate( 'google', {
         successRedirect: '/auth/protected',
         failureRedirect: '/auth/google/failure'
-}));
+    })
+);
 
 app.get("/auth/protected", isLoggedIn, (req, res) => {
     let name = req.user.displayName; 
